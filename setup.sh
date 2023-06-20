@@ -38,4 +38,4 @@ curl -s https://api.github.com/repos/boecker-lab/sirius/releases/latest | tr -d 
 # Get the directory of the current script
 script_directory=$(dirname "$0")
 echo $script_directory
-bash $script_directory/download_models.sh $script_directory/zenodo_{ion_mode}.txt
+bash $script_directory/download_models.sh $script_directory/zenodo_{default_mode}.txt
