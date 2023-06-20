@@ -2,6 +2,8 @@
 
 # Specify the default folder where the files will be downloaded
 default_folder="resources"
+default_mode="positive"
+default_OS="osx64"
 
 # Help function
 function display_help {
@@ -10,6 +12,8 @@ function display_help {
     echo ""
     echo "Arguments:"
     echo "  folder  : (Optional) The folder where the files will be downloaded. Default: $default_folder"
+    echo "  ion_mode  : (Optional) The ionization mode of the data ("positive" or "negative"). Default: $default_mode"
+    echo "  MY_OS  : (Optional) The operating system that is used ("osx64" for macOS and "linux64" for linux). Default: $default_OS"
     echo ""
 }
 
@@ -22,14 +26,16 @@ fi
 # Specify the folder where the files will be downloaded
 folder=${1:-$default_folder}
 
-# get sirius binary
-sirius_binary="https://github.com/boecker-lab/sirius/releases/download/v5.7.3/sirius-5.7.3-linux64.zip"
+# Specify the ion mode
+ion_mode=${1:-$default_mode}
 
-wget -P $folder $sirius_binary -nc
-unzip -u $folder/*.zip -d $folder
+# Specify the operating system
+MY_OS=${1:-$default_OS}
+
+# get sirius executable
+curl -s https://api.github.com/repos/boecker-lab/sirius/releases/latest | tr -d '"' | grep "browser_download_url.*${MY_OS}.zip$"| cut -d : -f 2,3 |  wget -i- 
 
 # Get the directory of the current script
 script_directory=$(dirname "$0")
 echo $script_directory
-bash $script_directory/download_models.sh $script_directory/zenodo_positive.txt
-bash $script_directory/download_models.sh $script_directory/zenodo_negative.txt
+bash $script_directory/download_models.sh $script_directory/zenodo_{ion_mode}.txt
