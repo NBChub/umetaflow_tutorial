@@ -3,7 +3,7 @@
 # Specify the default folder where the files will be downloaded
 default_folder="snakemake_UmetaFlow/resources"
 default_mode="positive"
-default_OS="osx64"
+default_OS="linux64"
 
 # Help function
 function display_help {
