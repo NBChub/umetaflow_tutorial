@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Specify the default folder where the files will be downloaded
-default_folder="snakemake_UmetaFlow/resources/ms2query"
+# Specify the default folder where the model files will be downloaded
+default_folder="resources/ms2query"
 
 # Help function
 function display_help {
