@@ -6,7 +6,7 @@ default_folder="snakemake_UmetaFlow/resources/ms2query"
 # Help function
 function display_help {
     echo "Usage: script.sh [folder]"
-    echo "Download resources required for running UmetaFlow."
+    echo "Download resources required for running umetaflow."
     echo ""
     echo "Arguments:"
     echo "folder:         (Optional) The folder where the files will be downloaded. Default: $default_folder"
