@@ -4,7 +4,7 @@ This is a collection of scripts to install [umetaflow](https://github.com/biosus
 ## Usage
 - Get the latest release of the script 
 ```bash
-SCRIPT_VERSION="0.1.2"
+SCRIPT_VERSION="0.1.3"
 wget -O setup_scripts.zip https://github.com/NBChub/umetaflow_tutorial/archive/refs/tags/$SCRIPT_VERSION.zip
 unzip setup_scripts.zip && mv umetaflow_tutorial-$SCRIPT_VERSION/ setup_scripts
 ```
