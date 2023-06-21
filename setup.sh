@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Specify the default folder where the files will be downloaded
-default_folder="resources"
+default_folder="snakemake_UmetaFlow/resources"
 default_mode="positive"
 default_OS="osx64"
 
 # Help function
 function display_help {
     echo "Usage: script.sh [folder]"
-    echo "Download resources required for running umetaflow."
+    echo "Download resources required for running UmetaFlow."
     echo ""
     echo "Arguments:"
     echo "folder:         (Optional) The folder where the files will be downloaded. Default: $default_folder"
@@ -17,7 +17,7 @@ function display_help {
     echo ""
 }
 
-# Check if help option is provided
+# Check if a help option is provided
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     display_help
     exit 0
@@ -32,8 +32,11 @@ ion_mode=${1:-$default_mode}
 # Specify the operating system
 MY_OS=${1:-$default_OS}
 
-# get sirius executable
+# get the SIRIUS executable
 (cd resources && curl -s https://api.github.com/repos/boecker-lab/sirius/releases/latest | tr -d '"' | grep "browser_download_url.*${MY_OS}.zip$"| cut -d : -f 2,3 |  wget -i- && unzip *.zip)
+
+# get the ThermoRawFileParser executable
+(cd resources && wget https://github.com/compomics/ThermoRawFileParser/releases/download/v1.3.4/ThermoRawFileParser.zip && unzip ThermoRawFileParser.zip)
 
 # Get the directory of the current script
 script_directory=$(dirname "$0")
