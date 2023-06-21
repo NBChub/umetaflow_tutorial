@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the default folder where the files will be downloaded
-default_folder="resources"
+default_folder="snakemake_UmetaFlow/resources"
 default_mode="positive"
 default_OS="osx64"
 
@@ -32,8 +32,11 @@ ion_mode=${1:-$default_mode}
 # Specify the operating system
 MY_OS=${1:-$default_OS}
 
-# get sirius executable
-(cd resources && curl -s https://api.github.com/repos/boecker-lab/sirius/releases/latest | tr -d '"' | grep "browser_download_url.*${MY_OS}.zip$"| cut -d : -f 2,3 |  wget -i- && unzip *.zip)
+# get the SIRIUS executable
+(cd ${default_folder} && curl -s https://api.github.com/repos/boecker-lab/sirius/releases/latest | tr -d '"' | grep "browser_download_url.*${MY_OS}.zip$"| cut -d : -f 2,3 |  wget -i- && unzip *.zip)
+
+# get the ThermoRawFileParser executable
+(mkdir ${default_folder}/ThermoRawFileParser && cd ${default_folder}/ThermoRawFileParser && wget https://github.com/compomics/ThermoRawFileParser/releases/download/v1.3.4/ThermoRawFileParser.zip && unzip ThermoRawFileParser.zip)
 
 # Get the directory of the current script
 script_directory=$(dirname "$0")

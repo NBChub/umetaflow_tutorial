@@ -1,16 +1,17 @@
 #!/bin/bash
 
 # Specify the default folder where the files will be downloaded
-default_folder="resources/ms2query"
+default_folder="snakemake_UmetaFlow/resources/ms2query"
 
 # Help function
 function display_help {
-    echo "Usage: script.sh <file> [folder]"
-    echo "Download files from URLs listed in the specified file."
+    echo "Usage: script.sh [folder]"
+    echo "Download resources required for running umetaflow."
     echo ""
     echo "Arguments:"
-    echo "  file    : The file containing the URLs to download."
-    echo "  folder  : (Optional) The folder where the files will be downloaded. Default: $default_folder"
+    echo "folder:         (Optional) The folder where the files will be downloaded. Default: $default_folder"
+    echo "ion_mode:       (Optional) The ionization mode of the data ("positive" or "negative"). Default: $default_mode"
+    echo "MY_OS:          (Optional) The operating system that is used ("osx64" for macOS and "linux64" for linux). Default: $default_OS"
     echo ""
 }
 
