@@ -9,8 +9,8 @@ function display_help {
     echo "Download files from URLs listed in the specified file."
     echo ""
     echo "Arguments:"
-    echo "  file    : The file containing the URLs to download."
-    echo "  folder  : (Optional) The folder where the files will be downloaded. Default: $default_folder"
+    echo "  file: The file containing the URLs to download."
+    echo "  folder: (Optional) The folder where the files will be downloaded. Default: $default_folder"
     echo ""
 }
 
