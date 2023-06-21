@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the default folder where the files will be downloaded
-default_folder="snakemake_UmetaFlow/resources"
+default_folder="resources"
 default_mode="positive"
 default_OS="linux64"
 
