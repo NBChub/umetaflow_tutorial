@@ -5,13 +5,13 @@ default_folder="resources/ms2query"
 
 # Help function
 function display_help {
-    echo "Usage: script.sh [folder]"
+    echo "Usage: script.sh [options]"
     echo "Download resources required for running umetaflow."
     echo ""
-    echo "Arguments:"
-    echo "folder:         (Optional) The folder where the files will be downloaded. Default: $default_folder"
-    echo "ion_mode:       (Optional) The ionization mode of the data ("positive" or "negative"). Default: $default_mode"
-    echo "MY_OS:          (Optional) The operating system that is used ("osx64" for macOS and "linux64" for linux). Default: $default_OS"
+    echo "Options:"
+    echo "-f, --folder <folder>       (Optional) The folder where the files will be downloaded. Default: $default_folder"
+    echo "-m, --ion_mode <ion_mode>   (Optional) The ionization mode of the data ('positive' or 'negative'). Default: $default_mode"
+    echo "-o, --MY_OS <MY_OS>         (Optional) The operating system that is used ('osx64' for macOS and 'linux64' for Linux). Default: $default_MY_OS"
     echo ""
 }
 
